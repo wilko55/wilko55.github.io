@@ -1,0 +1,123 @@
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #46494D;
+  color: #F4F4F4;
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
+  grid-template-rows: 0.2fr 0.5fr 0.4fr 0.6fr 2.4fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  height: 100vh;
+}
+
+.header {
+  grid-area: 1/1/2/4;
+}
+
+.main {
+  grid-area: 2/1/2/3;
+}
+
+.intro {
+  grid-area: 3/1/3/4;
+}
+
+.avatar {
+  grid-area: 5/1/6/2;
+}
+
+.side {
+  grid-area: 2/3/7/4;
+  position: relative;
+}
+
+.make {
+  grid-area: 4/1/7/3;
+  position: relative;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.angles {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.header-bar {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 80px 10px;
+  padding-top: 20px;
+}
+.header-bar a {
+  font-size: 20px;
+}
+.header-bar a + a {
+  margin-left: 20px;
+}
+
+.intro-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hello {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 40px;
+  color: #DE5D73;
+}
+
+.make-text {
+  font-size: 30px;
+}
+
+.avatar-wrapper {
+  margin: 30px 0 0 150px;
+}
+
+.falling-text {
+  color: #ffffff;
+  position: absolute;
+  margin-left: -3px;
+  top: 0;
+  transform: rotate(0deg);
+}
+
+.falling-text-prompt:after {
+  content: "|";
+}
+
+.prompt,
+.falling-text-prompt:after {
+  animation: blink 0.8s steps(1, end) infinite;
+}
+
+.prompt.hidden {
+  visibility: hidden;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

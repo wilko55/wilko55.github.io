@@ -1,0 +1,11 @@
+{
+  "name": "andywilko.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build-css": "sass scss/main.scss styles.css",
+    "watch-css": "nodemon -e scss -x \"yarn build-css\"",
+    "dev": "http-server"
+  }
+}
