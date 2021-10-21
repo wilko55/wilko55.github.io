@@ -1,70 +1,64 @@
 const words = [
   {
-    word: 'make web apps',
-    translateX: '-10px',
-    rotate: '-5deg',
+    word: 'design and code beautiful UX',
+    translateX: '10px',
+    rotate: '-2deg',
     top: '40px',
     delay: '0s',
   },
   {
     word: 'live in the front and backend',
-    translateX: '40px',
-    rotate: '-20deg',
-    top: '90px',
-  },
-  {
-    word: 'care about accessibility',
-    translateX: '100px',
-    rotate: '10deg',
-    top: '80px',
-  },
-  {
-    word: 'make solid UX',
-    translateX: '100px',
-    rotate: '10deg',
-    top: '80px',
-  },
-  {
-    word: 'write tidy javascript',
-    translateX: '40px',
-    rotate: '-20deg',
-    top: '90px',
-  },
-  {
-    word: 'love user testing',
-    translateX: '-30px',
-    rotate: '10deg',
+    translateX: '-80px',
+    rotate: '-15deg',
     top: '110px',
   },
   {
-    word: 'prefer typescript',
-    translateX: '40px',
-    rotate: '-20deg',
+    word: 'put accessibility first',
+    translateX: '125px',
+    rotate: '2deg',
+    top: '70px',
+  },
+  {
+    word: 'reach for html, sass and typescript',
+    translateX: '-40px',
+    rotate: '-15deg',
     top: '90px',
   },
   {
-    word: 'unit, integration and end to end test',
-    translateX: '40px',
-    rotate: '15deg',
-    top: '90px',
+    word: 'adore user testing',
+    translateX: '-50px',
+    rotate: '8deg',
+    top: '130px',
   },
   {
-    word: 'write clean sass and css',
-    translateX: '-35px',
-    rotate: '-10deg',
-    top: '230px',
+    word: 'am at home in the cloud',
+    translateX: '30px',
+    rotate: '10deg',
+    top: '155px',
+  },
+  {
+    word: 'test all of the things',
+    translateX: '-80px',
+    rotate: '1deg',
+    top: '115px',
+  },
+  {
+    word: 'write pixel perfect css',
+    translateX: '-55px',
+    rotate: '-12deg',
+    top: '195px',
   },
   {
     word: 'prototype and mockup in Figma',
-    translateX: '70px',
-    rotate: '30deg',
-    top: '180px',
+    translateX: '85px',
+    rotate: '42deg',
+    top: '235px',
   },
   {
     word: 'adore slackbots',
-    translateX: '-50px',
-    rotate: '-20deg',
-    top: '120px',
+    translateX: '-75px',
+    rotate: '4deg',
+    top: '210px',
   },
 ];
 
@@ -103,18 +97,17 @@ const typeWord = (wordData, i) => {
 };
 
 const moveWord = (wordData) => {
-  // togglePrompt();
   return new Promise((resolve, reject) => {
-    wordData.el.classList.remove('falling-text-prompt');
     wordData.el.style = `
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.1);
       transform: rotate(${wordData.rotate}) translateX(${wordData.translateX});
       top: calc(100% - ${wordData.top});
-      transition: top 2s ease-in 1s, transform 2s cubic-bezier(0.1, -0.6, 0.2, 1) 0.8s, color 8s ease-in 3s;
+      transition: top 2s cubic-bezier(.98,.09,.95,1.1) 1s, transform 2s cubic-bezier(0.1, -0.6, 0.2, 1) 0.8s, color 7s cubic-bezier(.76,.05,.86,.06) 1.6s;
       `;
       setTimeout(() => {
+        wordData.el.classList.remove('falling-text-prompt');
         togglePrompt();
-      }, 1200)
+      }, 800)
       setTimeout(() => {
         resolve(true);
     }, 2500);
@@ -130,14 +123,14 @@ const startWordDrop = (i) => {
   togglePrompt()
   if (!words[i]) {
     typeWord(
-      { word: 'lots of things :) ', el: placeholderText },
+      { word: 'am stoked you\'ve swung by :) ', el: placeholderText },
       words.length + 1
     );
     return;
   }
   typeWord(words[i], i)
     .then(moveWord)
-    .then(() => {togglePrompt
+    .then(() => {
       startWordDrop(i + 1);
     })
     .catch((err) => console.log(err));
@@ -145,4 +138,4 @@ const startWordDrop = (i) => {
 
 setTimeout(() => {
   startWordDrop(0);
-}, 1000)
+}, 2000)

@@ -8,11 +8,12 @@ body {
   background-color: #46494D;
   color: #F4F4F4;
   font-family: "Raleway", sans-serif;
+  overflow: hidden;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 0.8fr;
+  grid-template-columns: 0.2fr 0.8fr 1.2fr 0.8fr;
   grid-template-rows: 0.2fr 0.5fr 0.4fr 0.6fr 2.4fr 1fr;
   grid-auto-columns: 1fr;
   gap: 0px 0px;
@@ -21,28 +22,24 @@ body {
 }
 
 .header {
-  grid-area: 1/1/2/4;
-}
-
-.main {
-  grid-area: 2/1/2/3;
+  grid-area: 1/1/2/5;
 }
 
 .intro {
-  grid-area: 3/1/3/4;
+  grid-area: 3/1/3/5;
 }
 
 .avatar {
-  grid-area: 5/1/6/2;
+  grid-area: 5/1/6/3;
 }
 
 .side {
-  grid-area: 2/3/7/4;
+  grid-area: 2/3/7/5;
   position: relative;
 }
 
 .make {
-  grid-area: 4/1/7/3;
+  grid-area: 4/1/7/4;
   position: relative;
 }
 
@@ -66,6 +63,11 @@ body {
 }
 .header-bar a {
   font-size: 20px;
+  color: #F4F4F4 !important;
+  text-decoration: none !important;
+}
+.header-bar a:hover {
+  color: #DE5D73 !important;
 }
 .header-bar a + a {
   margin-left: 20px;
@@ -80,7 +82,7 @@ body {
 
 .hello {
   font-style: italic;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 40px;
   color: #DE5D73;
 }
@@ -99,6 +101,7 @@ body {
   margin-left: -3px;
   top: 0;
   transform: rotate(0deg);
+  margin-left: -8px;
 }
 
 .falling-text-prompt:after {
@@ -117,6 +120,57 @@ body {
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+@media (max-width: 700px) {
+  .angles {
+    bottom: -250px;
+    right: -280px;
+  }
+
+  .hello {
+    font-size: 20px;
+  }
+
+  .make-text {
+    font-size: 18px;
+  }
+
+  .intro {
+    grid-area: 3/1/3/5;
+  }
+
+  .avatar {
+    grid-area: 5/1/6/5;
+  }
+  .avatar .avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .avatar .avatar-wrapper object {
+    height: 130px;
+    width: 130px;
+  }
+
+  .make {
+    grid-area: 4/2/7/5;
+  }
+  .make .intro-wrapper {
+    align-items: start;
+    margin-left: 10px;
+  }
+
+  .header-bar {
+    margin: 0 10px;
+    font-size: 20px;
+  }
+  .header-bar a {
+    font-size: 16px;
+  }
+
+  .falling-text {
+    margin-left: -3px;
   }
 }
 
