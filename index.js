@@ -3,7 +3,7 @@ const words = [
     word: 'design and code beautiful UX',
     translateX: '10px',
     rotate: '-2deg',
-    top: '40px',
+    top: '80px',
     delay: '0s',
   },
   {
@@ -14,15 +14,15 @@ const words = [
   },
   {
     word: 'put accessibility first',
-    translateX: '125px',
+    translateX: '100px',
     rotate: '2deg',
-    top: '50px',
+    top: '90px',
   },
   {
     word: 'reach for html, sass and typescript',
-    translateX: '-40px',
+    translateX: '-50px',
     rotate: '-15deg',
-    top: '90px',
+    top: '115px',
   },
   {
     word: 'adore user testing',
@@ -34,7 +34,7 @@ const words = [
     word: 'am at home in the cloud',
     translateX: '30px',
     rotate: '10deg',
-    top: '75px',
+    top: '85px',
   },
   {
     word: 'test all of the things',
