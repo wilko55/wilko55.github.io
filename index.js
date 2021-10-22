@@ -98,10 +98,11 @@ const typeWord = (wordData, i) => {
 
 const moveWord = (wordData) => {
   return new Promise((resolve, reject) => {
+    const makeElHeight = document.querySelector('.make').offsetHeight;
     wordData.el.style = `
       color: rgba(255, 255, 255, 0);
       transform: rotate(${wordData.rotate}) translateX(${wordData.translateX});
-      top: calc(100% - ${wordData.top});
+      top: calc(${makeElHeight}px - ${wordData.top});
       transition: top 2s cubic-bezier(.98,.09,.95,1.1) 1s, transform 2s cubic-bezier(0.1, -0.6, 0.2, 1) 0.8s, color 7s cubic-bezier(.76,.05,.86,.06) 1.6s;
       `;
       setTimeout(() => {
