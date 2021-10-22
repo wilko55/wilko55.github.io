@@ -16,7 +16,7 @@ const words = [
     word: 'put accessibility first',
     translateX: '125px',
     rotate: '2deg',
-    top: '70px',
+    top: '50px',
   },
   {
     word: 'reach for html, sass and typescript',
@@ -34,31 +34,31 @@ const words = [
     word: 'am at home in the cloud',
     translateX: '30px',
     rotate: '10deg',
-    top: '155px',
+    top: '75px',
   },
   {
     word: 'test all of the things',
-    translateX: '-80px',
+    translateX: '-70px',
     rotate: '1deg',
     top: '115px',
   },
   {
     word: 'write pixel perfect css',
-    translateX: '-55px',
+    translateX: '-25px',
     rotate: '-12deg',
     top: '195px',
   },
   {
     word: 'prototype and mockup in Figma',
-    translateX: '85px',
-    rotate: '42deg',
-    top: '235px',
+    translateX: '25px',
+    rotate: '35deg',
+    top: '140px',
   },
   {
     word: 'adore slackbots',
-    translateX: '-75px',
+    translateX: '-25px',
     rotate: '4deg',
-    top: '210px',
+    top: '110px',
   },
 ];
 
@@ -99,7 +99,7 @@ const typeWord = (wordData, i) => {
 const moveWord = (wordData) => {
   return new Promise((resolve, reject) => {
     wordData.el.style = `
-      color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0);
       transform: rotate(${wordData.rotate}) translateX(${wordData.translateX});
       top: calc(100% - ${wordData.top});
       transition: top 2s cubic-bezier(.98,.09,.95,1.1) 1s, transform 2s cubic-bezier(0.1, -0.6, 0.2, 1) 0.8s, color 7s cubic-bezier(.76,.05,.86,.06) 1.6s;
